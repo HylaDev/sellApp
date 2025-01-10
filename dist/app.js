@@ -14,6 +14,9 @@ const remises = {
     50000: 15
 };
 function calculRemise(subtotal) {
+    if (subtotal <= 0) {
+        throw new Error("Le sous-total doit être supérieur à 0");
+    }
     let remise = 0;
     for (const seuil in remises) {
         if (subtotal >= parseFloat(seuil)) {
@@ -24,6 +27,15 @@ function calculRemise(subtotal) {
     return remise;
 }
 function calculTotal(product) {
+    if (product.quantity <= 0) {
+        throw new Error("La quantité doit être supérieure à 0");
+    }
+    if (product.price <= 0) {
+        throw new Error("Le prix doit être supérieur à 0");
+    }
+    if (product.etat && !taxes[product.etat]) {
+        throw new Error("L'état fourni n'est pas valide");
+    }
     const subtotal = product.price * product.quantity;
     const remise = calculRemise(subtotal);
     const totalApresRemise = subtotal * (1 - remise / 100);
