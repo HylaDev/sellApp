@@ -1,3 +1,6 @@
+
+import * as readline from 'readline';
+
 type Product = {
     quantity: number,
     price: number,
@@ -55,6 +58,24 @@ function calculTotal(product: Product): number {
 }
 
 
-const product: Product = { quantity: 978, price: 270.99, etat: "UT" };
-console.log("Quantité: ", product.quantity, "Prix: ", product.price);
-console.log("Total: ", calculTotal(product));
+// const product: Product = { quantity: 978, price: 270.99, etat: "UT" };
+// console.log("Quantité: ", product.quantity, "Prix: ", product.price);
+// console.log("Total: ", calculTotal(product));
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+console.log("Bienvenue sur votre application de vente");
+
+rl.question('Entrez la quantité: ', (quantity) => {
+    rl.question('Entrez le prix: ', (price) => {
+        rl.question('Entrez l\'état (UT, NV, TX, AL, CA): ', (etat) => {
+            const product: Product = { quantity: parseInt(quantity), price: parseFloat(price), etat: etat as etat };
+            console.log("Quantité: ", product.quantity, "Prix: ", product.price);
+            console.log("Total: ", calculTotal(product));
+            rl.close();
+        });
+    });
+});

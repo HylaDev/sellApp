@@ -1,4 +1,4 @@
-"use strict";
+import * as readline from 'readline';
 const taxes = {
     UT: 6.85,
     NV: 8.00,
@@ -42,6 +42,21 @@ function calculTotal(product) {
     const taxRate = product.etat ? taxes[product.etat] : 0;
     return totalApresRemise * (1 + taxRate / 100);
 }
-const product = { quantity: 978, price: 270.99, etat: "UT" };
-console.log("Quantité: ", product.quantity, "Prix: ", product.price);
-console.log("Total: ", calculTotal(product));
+// const product: Product = { quantity: 978, price: 270.99, etat: "UT" };
+// console.log("Quantité: ", product.quantity, "Prix: ", product.price);
+// console.log("Total: ", calculTotal(product));
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+console.log("Bienvenue sur votre application de vente");
+rl.question('Entrez la quantité: ', (quantity) => {
+    rl.question('Entrez le prix: ', (price) => {
+        rl.question('Entrez l\'état (UT, NV, TX, AL, CA): ', (etat) => {
+            const product = { quantity: parseInt(quantity), price: parseFloat(price), etat: etat };
+            console.log("Quantité: ", product.quantity, "Prix: ", product.price);
+            console.log("Total: ", calculTotal(product));
+            rl.close();
+        });
+    });
+});
