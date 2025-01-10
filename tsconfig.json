@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "noEmitOnError": true,
+        "strict": true,
+        "target": "ES6",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+        },
+    "exclude": ["node_modules"],
+    "files": [
+        "src/app.ts",
+    ]
+}

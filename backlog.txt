@@ -1,0 +1,44 @@
+tranche 1
+- afficher "Bienvenue sur votre application de vente".
+
+tranche 2 
+- afficher "un prix".
+
+tranche 3
+- afficher "une quantité" et "un prix".
+
+tranche 4 
+- calculer et afficher le prix total en fonction de la quantité (quantité * prix).
+
+tranche 5 
+- calculer et afficher le prix de vente avec taxe dans l'etat UT (6.58%).
+
+tranche 6 
+- calculer et afficher le prix de vente avec taxe dans l'etat NV (8%).
+
+tranche 7 
+- calculer et afficher le prix de vente avec taxe dans l'etat TX (6.25%).
+
+tranche 8
+- calculer et afficher le prix de vente avec taxe dans l'etat AL (4%).
+
+tranche 9 
+- calculer et afficher le prix de vente avec taxe dans l'etat CA (8.25%).
+
+tranche 10 
+- claculer et afficher le prix de vente avec une remise de 3%.
+
+tranche 11
+- appliquer la remise si la valeur de la commande atteint 1000€.
+
+tranche 12
+- changer le taux de remise à 5% si la valeur de la commande atteint 5000€.  
+
+trance 13 
+- changer le taux de remise à 7% si la valeur de la commande atteint 7000€.  
+
+tranche 14
+- changer le taux de remise à 10% si la valeur de la commande atteint 10000€.
+
+trance 15 
+- changer le taux de remise à 15% si la valeur de la commande atteint 50000€. 
